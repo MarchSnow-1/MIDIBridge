@@ -47,39 +47,7 @@ MIDI Keyboard ──USB──▶ Server ──WebSocket──▶ Client ──Vi
 
 ### Server
 
-Windows
-
-```bash
-# Get the source code
-git clone https://github.com/MarchSnow-1/midibridge-server.git
-cd midibridge-server
-
-# Pull dependencies
-go mod tidy
-
-# Build
-go build -o dist/midibridge-server.exe ./src/
-
-# Run
-./dist/midibridge-server.exe
-```
-
-Linux / macOS
-
-```bash
-# Get the source code
-git clone https://github.com/MarchSnow-1/midibridge-server.git
-cd midibridge-server
-
-# Pull dependencies
-go mod tidy
-
-# Build
-go build -o dist/midibridge-server ./src/
-
-# Run
-./dist/midibridge-server
-```
+Download the binary for your platform from [MIDIBridge-Server Releases](https://github.com/MarchSnow-1/midibridge-server/releases), extract and run
 
 > Change the default password via the HTTP API after first launch.<br>
 > See the server repository README.md for detailed instructions.
