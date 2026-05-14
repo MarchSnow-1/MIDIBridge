@@ -1,0 +1,102 @@
+<div align="center">
+
+# MIDIBridge
+
+**Stream MIDI signals to any device over the Internet in real time**
+
+[![Server](https://img.shields.io/badge/Server&Client-Windows%20%7C%20macOS%20%7C%20Linux-blue?style=for-the-badge)](https://github.com/MarchSnow-1/midi-bridge-server)<br>
+[![Golang](https://img.shields.io/badge/Golang-1.26%2B-green?style=for-the-badge)](https://nodejs.org)
+[![Node.js](https://img.shields.io/badge/Node.js-v18%2B-green?style=for-the-badge)](https://nodejs.org)
+[![License](https://img.shields.io/badge/License-MIT-orange?style=for-the-badge)](LICENSE)
+
+[**English**](README.md) | [**简体中文**](README_zh-CN.md)
+
+</div>
+
+---
+
+## Overview
+
+MIDIBridge is a lightweight, open-source toolset that streams MIDI signals to any machine over the Internet in real time.
+
+No extra hardware. No distance limit. Just plug in and play.
+
+```
+MIDI Keyboard ──USB──▶ Server ──WebSocket──▶ Client ──Virtual MIDI──▶ DAW / Other Software
+```
+
+## Repositories
+
+| Component | Repo | Description |
+|-----------|------|-------------|
+| **Server** | [midibridge-server](https://github.com/MarchSnow-1/midibridge-server) | Reads USB MIDI input and broadcasts over WebSocket |
+| **Client** | [midibridge-client](https://github.com/MarchSnow-1/midibridge-client) | Receives signals and injects them into a virtual MIDI port for use by DAWs |
+
+## Features
+
+| Feature | Description |
+|---------|-------------|
+| 🔌 Zero-config pairing | Set password once — client auto-connects |
+| 👥 Multi-client | One server broadcasts to multiple clients simultaneously |
+| 🔄 Hot-plug recovery | Unplug and replug the keyboard anytime — server auto-detects |
+| 🎯 Device targeting | Configure target MIDI device name — auto-retries until ready |
+| 🔒 Password-protected | bcrypt-hashed storage with remote online update |
+| ♻️ Auto-reconnect | Exponential backoff with random jitter to avoid connection storms |
+
+## Quick Start
+
+### Server
+
+Windows
+
+```bash
+# Get the source code
+git clone https://github.com/MarchSnow-1/midibridge-server.git
+cd midibridge-server
+
+# Pull dependencies
+go mod tidy
+
+# Build
+go build -o dist/midibridge-server.exe ./src/
+
+# Run
+./dist/midibridge-server.exe
+```
+
+Linux / macOS
+
+```bash
+# Get the source code
+git clone https://github.com/MarchSnow-1/midibridge-server.git
+cd midibridge-server
+
+# Pull dependencies
+go mod tidy
+
+# Build
+go build -o dist/midibridge-server ./src/
+
+# Run
+./dist/midibridge-server
+```
+
+> Change the default password via the HTTP API after first launch.<br>
+> See the server repository README.md for detailed instructions.
+
+### Client
+
+```bash
+git clone https://github.com/MarchSnow-1/midibridge-client
+cd midi-bridge-client
+npm install
+npm start
+```
+
+> Edit `data/config.json` with your server IP and password before starting.
+
+**Windows users**: Due to driver limitations, install [loopMIDI](https://www.tobias-erichsen.de/software/loopmidi.html) first and create a virtual port with the same name as `portName` in your config file — otherwise the client cannot inject MIDI signals.
+
+## License
+
+[MIT](LICENSE) — Use, modify, and distribute freely.
