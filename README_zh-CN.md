@@ -4,9 +4,8 @@
 
 **通过网络将 MIDI 信号实时传输到任意设备**
 
-[![Server](https://img.shields.io/badge/Server&Client-Windows%20%7C%20macOS%20%7C%20Linux-blue?style=for-the-badge)](https://github.com/MarchSnow-1/midi-bridge-server)<br>
+[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-blue?style=for-the-badge)](https://github.com/MarchSnow-1/midi-bridge-server)
 [![Golang](https://img.shields.io/badge/Golang-1.26%2B-green?style=for-the-badge)](https://nodejs.org)
-[![Node.js](https://img.shields.io/badge/Node.js-v18%2B-green?style=for-the-badge)](https://nodejs.org)
 [![License](https://img.shields.io/badge/License-MIT-orange?style=for-the-badge)](LICENSE)
 
 [**English**](README.md) | [**简体中文**](README_zh-CN.md)
