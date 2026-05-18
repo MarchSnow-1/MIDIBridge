@@ -5,7 +5,7 @@
 **Stream MIDI signals to any device over the Internet in real time**
 
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-blue?style=for-the-badge)](https://github.com/MarchSnow-1/midi-bridge-server)
-[![Golang](https://img.shields.io/badge/Golang-1.26%2B-green?style=for-the-badge)](https://nodejs.org)
+[![Golang](https://img.shields.io/badge/Golang-1.26%2B-green?style=for-the-badge)](https://go.dev)
 [![License](https://img.shields.io/badge/License-MIT-orange?style=for-the-badge)](LICENSE)
 
 [**English**](README.md) | [**简体中文**](README_zh-CN.md)
@@ -53,16 +53,16 @@ Download the binary for your platform from [MIDIBridge-Server Releases](https://
 
 ### Client
 
+Download the binary for your platform from [MIDIBridge-Client Releases](https://github.com/MarchSnow-1/midibridge-client/releases), extract and run:
+
 ```bash
-git clone https://github.com/MarchSnow-1/midibridge-client
-cd midi-bridge-client
-npm install
-npm start
+./midibridge-client
 ```
 
 > Edit `data/config.json` with your server IP and password before starting.
 
-**Windows users**: Due to driver limitations, install [loopMIDI](https://www.tobias-erichsen.de/software/loopmidi.html) first and create a virtual port with the same name as `portName` in your config file — otherwise the client cannot inject MIDI signals.
+> [!IMPORTANT]
+> **Windows users**: Due to driver limitations, install [loopMIDI](https://www.tobias-erichsen.de/software/loopmidi.html) first and create a virtual port with the same name as `virtualPortName` in your config file — otherwise the client cannot inject MIDI signals.
 
 ## License
 
