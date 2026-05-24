@@ -4,7 +4,7 @@
 
 **Stream MIDI signals to any device over the Internet in real time**
 
-[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-blue?style=for-the-badge)](https://github.com/MarchSnow-1/midibridge)
+[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux%20%7C%20Android-blue?style=for-the-badge)](https://github.com/MarchSnow-1/midibridge)
 [![Golang](https://img.shields.io/badge/Golang-1.26%2B-green?style=for-the-badge)](https://go.dev)
 [![GitHub Repo stars](https://img.shields.io/github/stars/MarchSnow-1/midibridge?style=for-the-badge)](https://github.com/MarchSnow-1/midibridge)
 [![License](https://img.shields.io/badge/License-MIT-orange?style=for-the-badge)](LICENSE)
@@ -31,6 +31,7 @@ MIDI Keyboard ──USB──▶ Server ──WebSocket──▶ Client ──Vi
 |-----------|------|-------------|
 | **Server** | [midibridge-server](https://github.com/MarchSnow-1/midibridge-server) | Reads USB MIDI input and broadcasts over WebSocket |
 | **Client** | [midibridge-client](https://github.com/MarchSnow-1/midibridge-client) | Receives signals and injects them into a virtual MIDI port for use by DAWs |
+| **Android** | [midibridge-android](https://github.com/MarchSnow-1/midibridge-android) | Run MIDIBridge Server on your Android device |
 
 ## Features
 
@@ -51,6 +52,14 @@ Download the binary for your platform from [MIDIBridge-Server Releases](https://
 
 > Change the default password via the HTTP API after first launch.<br>
 > See the server repository README.md for detailed instructions.
+
+### Android
+
+Run MIDIBridge Server on your Android device
+
+Download the APK from [MIDIBridge-Android Releases](https://github.com/MarchSnow-1/midibridge-android/releases) and install it on your phone.
+
+> See [MIDIBridge-Android README](https://github.com/MarchSnow-1/midibridge-android) for details.
 
 ### Client
 
