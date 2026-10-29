@@ -43,6 +43,7 @@ MIDI 键盘 ──USB──▶ 服务端 ──WebSocket──▶ 客户端 ─�
 | 🎯 指定设备 | 配置目标 MIDI 设备名称，未就绪时自动重试 |
 | 🔒 密码保护 | bcrypt 哈希存储，支持远程在线修改 |
 | ♻️ 断线重连 | 指数退避 + 随机抖动，防止同时重连冲击服务端 |
+| 🔗 外部接入 | 本地程序可通过 TCP 直接读取实时 MIDI 流，无需虚拟 MIDI 端口 |
 
 ## 快速开始
 
@@ -73,6 +74,20 @@ MIDI 键盘 ──USB──▶ 服务端 ──WebSocket──▶ 客户端 ─�
 
 > [!IMPORTANT]
 > **Windows 用户注意**：由于底层驱动限制，需先安装 [loopMIDI](https://www.tobias-erichsen.de/software/loopmidi.html) 并在其中创建一个与配置文件中 `virtualPortName` 同名的虚拟端口，客户端才能正常注入 MIDI 信号
+
+#### 外部接入（可选）
+
+除注入虚拟 MIDI 端口外，客户端还可以把同一份 MIDI 流通过本机 TCP 回环套接字发布出去，让同一台机器上的其他程序直接读取
+
+```bash
+./midibridge-client -ipc-listen 127.0.0.1:9003
+```
+
+该功能**默认关闭**，不影响常规的虚拟 MIDI 端口用法
+
+接口为只读且无鉴权，适用于同一台机器上的程序接入
+
+协议规范与开箱即用的示例见客户端仓库的 `docs/PROTOCOL_zh-CN.md`
 
 ## 许可证
 

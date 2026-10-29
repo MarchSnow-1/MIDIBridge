@@ -43,6 +43,7 @@ MIDI Keyboard ──USB──▶ Server ──WebSocket──▶ Client ──Vi
 | 🎯 Device targeting | Configure target MIDI device name — auto-retries until ready |
 | 🔒 Password-protected | bcrypt-hashed storage with remote online update |
 | ♻️ Auto-reconnect | Exponential backoff with random jitter to avoid connection storms |
+| 🔗 External integration | Local programs can read the live MIDI stream directly over TCP — no virtual MIDI port required |
 
 ## Quick Start
 
@@ -73,6 +74,18 @@ Download the binary for your platform from [MIDIBridge-Client Releases](https://
 
 > [!IMPORTANT]
 > **Windows users**: Due to driver limitations, install [loopMIDI](https://www.tobias-erichsen.de/software/loopmidi.html) first and create a virtual port with the same name as `virtualPortName` in your config file — otherwise the client cannot inject MIDI signals.
+
+#### External integration (optional)
+
+Besides injecting into a virtual MIDI port, the client can also publish the same MIDI stream over a local TCP loopback socket, so other programs on the same machine can read it directly
+
+```bash
+./midibridge-client -ipc-listen 127.0.0.1:9003
+```
+
+This is **off by default** and does not change the normal virtual-MIDI-port workflow. The interface is read-only and unauthenticated, so it is intended for programs running on the same machine.
+
+See `docs/PROTOCOL.md` in the client repository for the protocol specification and copy-paste-ready examples.
 
 ## License
 
