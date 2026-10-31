@@ -49,7 +49,7 @@ MIDI 键盘 ──USB──▶ 服务端 ──WebSocket──▶ 客户端 ─�
 
 ### 服务端
 
-从 [MIDIBridge-Server Releases](https://github.com/MarchSnow-1/midibridge-server/releases) 下载对应平台的二进制，解压后直接运行
+从 [MIDIBridge-Server Releases](https://github.com/MarchSnow-1/midibridge-server/releases) 下载对应平台的二进制
 
 > 首次启动后，通过 HTTP API 修改默认密码<br>
 > 具体操作方式请参考服务端仓库 README.md
@@ -64,7 +64,7 @@ MIDI 键盘 ──USB──▶ 服务端 ──WebSocket──▶ 客户端 ─�
 
 ### 客户端
 
-从 [MIDIBridge-Client Releases](https://github.com/MarchSnow-1/midibridge-client/releases) 下载对应平台的二进制，解压后直接运行：
+从 [MIDIBridge-Client Releases](https://github.com/MarchSnow-1/midibridge-client/releases) 下载对应平台的二进制：
 
 ```bash
 ./midibridge-client

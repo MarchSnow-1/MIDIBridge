@@ -49,7 +49,7 @@ MIDI Keyboard ──USB──▶ Server ──WebSocket──▶ Client ──Vi
 
 ### Server
 
-Download the binary for your platform from [MIDIBridge-Server Releases](https://github.com/MarchSnow-1/midibridge-server/releases), extract and run
+Download the binary for your platform from [MIDIBridge-Server Releases](https://github.com/MarchSnow-1/midibridge-server/releases)
 
 > Change the default password via the HTTP API after first launch.<br>
 > See the server repository README.md for detailed instructions.
@@ -64,7 +64,7 @@ Download the APK from [MIDIBridge-Android Releases](https://github.com/MarchSnow
 
 ### Client
 
-Download the binary for your platform from [MIDIBridge-Client Releases](https://github.com/MarchSnow-1/midibridge-client/releases), extract and run:
+Download the binary for your platform from [MIDIBridge-Client Releases](https://github.com/MarchSnow-1/midibridge-client/releases):
 
 ```bash
 ./midibridge-client
